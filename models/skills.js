@@ -21,7 +21,7 @@ function deleteOne(id) {
 }
 
 function create(skill) {
-  skill.id = date.now() % 1000000;
+  skill.id = Date.now() % 100000000;
   skill.done = false;
   skills.push(skill);
 }
