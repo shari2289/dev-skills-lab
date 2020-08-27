@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="view port" content="width=device-width, initial-scale=1.0" />
+    <title>Shari's Skills</title>
+  </head>
+  <body>
+    <a href ="/">Home</a>
+    <h1>Skills as of <%= time %></h1>
+    <ul>
+      <% skills.forEach(function(s) { %>
+      <li>
+        <form action="/skills/<%= s.id %>?_method=DELETE"
+          class="delete-form" method="POST">
+          <button type="submit">X</button>
+        </form>
+        <a href="/skills/<%= s.id %>"><%= s.skill %> 
+          -
+           <%= s.level ? 'more than 5 years' : 'less than 5 years'
+        %>
+      </li>
+      <% }); %>
+    </ul>
+    <a href="/skills/new">Add New Skills</a>
+  </body>
+</html>
